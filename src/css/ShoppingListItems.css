@@ -1,0 +1,40 @@
+.shopping-list-item {
+  margin-right: 20px;
+  width:300px;
+}
+
+.shopping-list-items__list {
+ padding-top: 10px;
+}
+
+.shopping-list-items__list-item {
+  padding: 5px 10px ;
+  border-bottom: 1px solid #d3d3d3
+}
+
+.shopping-list-items__list-item button{
+  float: right;
+  color: red
+}
+
+.shopping-list-items__list-item button:hover {
+  color: #f76464
+}
+
+.shopping-list-items__list-item input {
+  vertical-align: middle;
+  position: relative;
+  bottom: 1px;
+  margin: 0;
+  margin-right: 10px;
+}
+
+.shopping-list-items__list-item span{
+  color:#999999
+  
+}
+
+.shopping-list-items__list-item--checked span{
+  text-decoration: line-through;
+  text-decoration-color:black;
+}

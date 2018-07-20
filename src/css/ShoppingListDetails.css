@@ -1,0 +1,13 @@
+.shopping-list-details {
+  flex:1;
+}
+
+.shopping-list-details__body {
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px;
+}
+
+.shopping-list-details__body label {
+  margin-top: 15px;
+}

@@ -1,0 +1,11 @@
+.gradient--green {
+  background: linear-gradient( rgba(0,229,145,1) , rgba(47,239,188,1));
+}
+
+.color--white {
+  color:#ffffff;
+}
+
+.border--light-gray {
+    border: 1px solid #d3d3d3
+}
