@@ -23,6 +23,7 @@ const generateShoppingListItem = (item, props) => {
     if (item.id === NEW_ITEM) {
       return (
         <div className={className} key={item.id}>
+          <input type="checkbox" className="--hidden"/>
           {itemNameElement}
         </div>)
     }

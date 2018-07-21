@@ -1,4 +1,4 @@
-let idCounter = 4
+let idCounter = 3
 
 let mockData = [
   {
@@ -8,19 +8,13 @@ let mockData = [
     price: 13,
     description:'Not the black one please'
   },
+
   {
     id:2,
-    name: "Bread2",
-    quantity: 3,
-    price: 13,
-    description:'Not the black one please'
-  },
-  {
-    id:3,
-    name: "Bread3",
-    quantity: 4,
+    name: "Cola",
+    quantity: 5,
     price: 3,
-    description:'Not the black one please',
+    description:'',
     checked:true,
   },
 ];

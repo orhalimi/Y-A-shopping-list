@@ -1,6 +1,6 @@
+
 .container {
   margin: auto;
-  margin-top: 100px;
   display: flex;
   width: 800px;
   align-items: center;
@@ -9,10 +9,11 @@
 }
 
 .container__box {
+  margin-top: 100px;
   display: flex;
   flex-direction: column;
   height: 400px;
-  overflow: auto;
+
 }
 
 .container__box-header h2 {
@@ -22,4 +23,18 @@
 
 .container__box-header {
   padding: 15px;
+}
+
+@media only screen and (max-width: 800px) {
+  .container {
+    width: 80%;
+    flex-direction: column;
+  }
+
+  .container__box {
+    margin-top: 10%;
+    display: flex;
+    height: auto;
+  }
+  
 }

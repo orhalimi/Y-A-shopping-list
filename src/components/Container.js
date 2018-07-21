@@ -25,8 +25,9 @@ export default class Container extends Component {
 
   handleDelete = (id) => (e) =>{
     e.preventDefault();
+    const viewedItemId = id === this.state.viewedItemId? null: viewedItemId;
     const updatedShoppingList = serverMock.deleteListItem(id);
-    this.setState({shoppingList:updatedShoppingList});
+    this.setState({shoppingList:updatedShoppingList, viewedItemId});
   }
 
   getShoppingListItemById = (id) => (this.state.shoppingList.filter(item => item.id === id)[0] || {})
@@ -43,33 +44,30 @@ export default class Container extends Component {
   }
 
   handleOutsideItemClick = (id) => (e) => {
-    const updatedState = {editedItemId:null}
+    const updatedState = {}
     if (e.target.value) {
       if (id === NEW_ITEM) {
         const name = e.target.value;
         updatedState.shoppingList = serverMock.addListItem(name);
+        updatedState.viewedItemId = updatedState.shoppingList[updatedState.shoppingList.length - 1].id;
       } else {
         const updatedItem = this.getShoppingListItemById(id);
         updatedItem.name = e.target.value;
         updatedState.shoppingList = serverMock.updateListItem(updatedItem);
       }
     }
+    updatedState.editedItemId=null
     this.setState(updatedState);
   }
 
-  handleItemNameChange = (id) => (e) => {
-    let updatedShoppingList;
-    if (id === NEW_ITEM) {
-      console.log("yyyy")
-      const name = e.target.value;
-      updatedShoppingList = serverMock.addListItem(name);
+  handleOutsideItemDetailsFormClick = (e) => {
+    if (e.target.value) { 
+      const updatedState = {};
+      const updatedItem = this.getShoppingListItemById(this.state.viewedItemId);
+      updatedItem[e.target.id] = e.target.value;
+      updatedState.shoppingList = serverMock.updateListItem(updatedItem);
+      this.setState(updatedState);
     }
-    else { 
-      const updatedItem = this.getShoppingListItemById(id);
-      updatedItem.name = e.target.value;
-      updatedShoppingList = serverMock.updateListItem(updatedItem);
-    }
-    this.setState({shoppingList:updatedShoppingList});
   }
 
   render () {
@@ -77,16 +75,20 @@ export default class Container extends Component {
     return (
       <section className="container">
         <
-          ShoppingListItems 
+        ShoppingListItems 
           shoppingList={this.state.shoppingList}
           handleDelete={this.handleDelete}
           handleCheckbox={this.handleCheckbox}
           handleItemClick={this.handleItemClick}
           handleOutsideItemClick={this.handleOutsideItemClick}
-          handleItemNameChange={this.handleItemNameChange}
           editedItemId={this.state.editedItemId}
         />
-        <ShoppingListDetails visibility={this.state.itemDetailsvisibility} item={viewedItemDetails}/>
+        <
+        ShoppingListDetails 
+          handleOutsideItemDetailsFormClick={this.handleOutsideItemDetailsFormClick}
+          visibility={this.state.itemDetailsvisibility} 
+          item={viewedItemDetails}
+        />
       </section>
     )
   }

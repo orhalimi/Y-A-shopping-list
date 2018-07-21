@@ -10,4 +10,17 @@
 
 .shopping-list-details__body label {
   margin-top: 15px;
+  
+}
+
+@media only screen and (max-width: 800px) {
+
+  .shopping-list-details {
+    width: 300px;
+    margin-bottom: 10%;
+  }
+
+  .shopping-list-details__body {
+    padding-bottom: 20px;
+  }
 }

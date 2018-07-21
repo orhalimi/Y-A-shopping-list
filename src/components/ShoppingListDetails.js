@@ -18,11 +18,11 @@ const ShoppingListDetails = props => {
       </div>
       <div className="shopping-list-details__body">
         <label htmlFor="quantity">Quantity</label>  
-        <input type="text" id="quantity" value={quantity}/>
+        <input type="number" min="1" max="99" key={quantity} id="quantity" defaultValue={quantity} onBlur={props.handleOutsideItemDetailsFormClick}/>
         <label htmlFor="price">Price</label>  
-        <input type="text" id="price" value={price}/>
+        <input type="number" min="0" step=".01" max="1000000" pattern="^\d+(?:\.\d{1,2})?$" key={price} id="price" defaultValue={price} onBlur={props.handleOutsideItemDetailsFormClick}/>
         <label htmlFor="description">Description</label>  
-        <textarea rows="3" id="description" textarea value={description}/>
+        <textarea rows="3" key={description} id="description" defaultValue={description} onBlur={props.handleOutsideItemDetailsFormClick}/>
       </div>
      
     </div>

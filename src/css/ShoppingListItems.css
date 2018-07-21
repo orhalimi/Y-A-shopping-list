@@ -1,6 +1,7 @@
 .shopping-list-item {
   margin-right: 20px;
   width:300px;
+  overflow: auto;
 }
 
 .shopping-list-items__list {
@@ -31,10 +32,15 @@
 
 .shopping-list-items__list-item span{
   color:#999999
-  
 }
 
 .shopping-list-items__list-item--checked span{
   text-decoration: line-through;
   text-decoration-color:black;
+}
+
+@media only screen and (max-width: 800px) {
+  .shopping-list-item {
+    margin-right: 0;
+  }
 }
