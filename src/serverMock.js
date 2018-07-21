@@ -25,18 +25,29 @@ let mockData = [
   },
 ];
 
-//to simulate server
-const returnAsPromise = (data) => (new Promise(r => r(data)))
 
-export const getListItem = () => (returnAsPromise(mockData));
+export const getListItem = () => (mockData);
 
 export const deleteListItem = id => {
-  mockData = mockData.filter(item => (item.id !== id))
-  console.log(mockData)
-  return returnAsPromise(mockData)
+  mockData = mockData.filter(item => (item.id !== id));
+  return mockData;
 };
 
 export const updateListItem = updatedItem => {
-  mockData = mockData.map(item => (item.id === updatedItem.id? updatedItem: item))
-  return returnAsPromise(mockData)
+  mockData = mockData.map(item => (item.id === updatedItem.id? updatedItem: item));
+  return mockData;
+}
+
+export const addListItem = name => {
+  mockData.push(
+    {
+      id: idCounter,
+      name: name,
+      quantity: 1,
+      price: 0,
+      description:'',
+    }
+  );
+  idCounter += 1;
+  return mockData;
 }

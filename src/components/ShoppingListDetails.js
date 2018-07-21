@@ -9,8 +9,7 @@ const ShoppingListDetails = props => {
     return [];
   }
 
-
-  const {name="", quantity=1, price=1, description=''} = props.item;
+  const {name="", quantity=1, price=0, description=''} = props.item;
 
   return (
     <div className="container__box shopping-list-details border--light-gray">
