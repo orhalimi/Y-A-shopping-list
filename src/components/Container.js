@@ -25,9 +25,9 @@ export default class Container extends Component {
 
   handleDelete = (id) => (e) =>{
     e.preventDefault();
-    const viewedItemId = id === this.state.viewedItemId? null: viewedItemId;
+    const itemDetailsvisibility = id === this.state.viewedItemId? false: true;
     const updatedShoppingList = serverMock.deleteListItem(id);
-    this.setState({shoppingList:updatedShoppingList, viewedItemId});
+    this.setState({shoppingList:updatedShoppingList, itemDetailsvisibility});
   }
 
   getShoppingListItemById = (id) => (this.state.shoppingList.filter(item => item.id === id)[0] || {})

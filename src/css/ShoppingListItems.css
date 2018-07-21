@@ -22,12 +22,19 @@
   color: #f76464
 }
 
-.shopping-list-items__list-item input {
+.shopping-list-items__list-item input[type="checkbox"] {
   vertical-align: middle;
   position: relative;
   bottom: 1px;
   margin: 0;
   margin-right: 10px;
+}
+
+.shopping-list-items__list-item input[type="text"] {
+  border: none;
+  font:inherit;
+  margin:0;
+  padding:0;
 }
 
 .shopping-list-items__list-item span{
@@ -38,6 +45,7 @@
   text-decoration: line-through;
   text-decoration-color:black;
 }
+
 
 @media only screen and (max-width: 800px) {
   .shopping-list-item {
