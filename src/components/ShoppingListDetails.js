@@ -24,7 +24,6 @@ const ShoppingListDetails = props => {
         <label htmlFor="description">Description</label>  
         <textarea rows="3" key={description} id="description" defaultValue={description} onBlur={props.handleOutsideItemDetailsFormClick}/>
       </div>
-     
     </div>
   )
 

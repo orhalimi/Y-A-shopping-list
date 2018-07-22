@@ -19,7 +19,6 @@ export default class Container extends Component {
 
   componentDidMount() {
     const shoppingList = serverMock.getListItem();
-    console.log(shoppingList);
     this.setState({shoppingList});
   }
 

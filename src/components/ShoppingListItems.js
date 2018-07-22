@@ -57,7 +57,6 @@ const generateShoppingListItem = (item, props) => {
         </div>
       </div>
     )
-
 }
 
 export default ShoppingListItems;
